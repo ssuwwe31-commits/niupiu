@@ -1,0 +1,17 @@
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+sqlalchemy
+asyncpg
+psycopg2-binary
+alembic
+python-multipart
+python-jose[cryptography]
+passlib[bcrypt]
+python-dotenv
+llama-index-core
+llama-index-vector-stores-postgres
+llama-index-llms-ollama
+llama-index-embeddings-ollama
+httpx
