@@ -34,12 +34,18 @@ dist/
 .DS_Store
 Thumbs.db
 
-# Test files
+# Test files (excluding tests/ directories)
+!/tests/
+!/backend/tests/
 test_*.py
 test_*.js
 test_*.json
 *_test.py
 *_test.js
+!/tests/*.py
+!/tests/*.js
+!/tests/*.sh
+!/backend/tests/*.py
 
 # Logs and reports
 *.log
