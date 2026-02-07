@@ -15,3 +15,8 @@ llama-index-vector-stores-postgres
 llama-index-llms-ollama
 llama-index-embeddings-ollama
 httpx
+chardet
+ebooklib
+aiohttp
+langfuse
+litellm

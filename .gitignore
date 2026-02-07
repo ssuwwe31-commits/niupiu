@@ -33,3 +33,40 @@ dist/
 # OS
 .DS_Store
 Thumbs.db
+
+# Test files
+test_*.py
+test_*.js
+test_*.json
+*_test.py
+*_test.js
+
+# Logs and reports
+*.log
+backend_full.log
+evaluation_report.json
+test_report.json
+backend/test*.json
+backend/test*.txt
+backend/*_report.json
+backend/*_report.txt
+backend/full_test*.txt
+backend/*test_results*.json
+
+# Uploads
+uploads/
+backend/uploads/
+
+# Simple novel
+simple-novel/
+
+# Scripts (not to be confused with source code)
+scripts/
+
+# Temporary files
+backend/novel.txt
+backend/story_units*.json
+backend/check_characters.py
+backend/check_db.py
+backend/sync_llamaindex.sql
+

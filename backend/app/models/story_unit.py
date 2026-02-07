@@ -1,5 +1,6 @@
 from sqlalchemy import Column, String, JSON, Text, Float, Integer
 from sqlalchemy.dialects.postgresql import UUID, ARRAY
+from pgvector.sqlalchemy import Vector
 from sqlalchemy.ext.declarative import declarative_base
 import uuid
 
@@ -17,7 +18,7 @@ class StoryUnit(Base):
     plot_function = Column(String(255), nullable=False)
     result = Column(String(255))
     original_text = Column(Text, nullable=False)
-    embedding = Column(ARRAY(Float))
+    embedding = Column(Vector(1024))
 
     conflict_type = Column(String(100))
     emotion_type = Column(String(100))

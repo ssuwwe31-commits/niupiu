@@ -1,6 +1,7 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_serializer
 from typing import List, Optional, Dict, Any
 from datetime import datetime
+from uuid import UUID
 
 
 class StoryUnitBase(BaseModel):
@@ -25,9 +26,17 @@ class StoryUnitCreate(StoryUnitBase):
     pass
 
 
+class StoryUnitUpdate(BaseModel):
+    embedding: Optional[List[float]] = Field(None, description="Embedding向量")
+
+
 class StoryUnitResponse(StoryUnitBase):
-    id: str
+    id: UUID
     created_at: Optional[datetime] = None
+
+    @field_serializer('id')
+    def serialize_id(self, value: UUID, _info):
+        return str(value)
 
     class Config:
         from_attributes = True
@@ -40,3 +49,7 @@ class StoryUnitSearch(BaseModel):
     plot_function: Optional[str] = Field(None, description="剧情功能")
     query: Optional[str] = Field(None, description="向量检索查询")
     top_k: int = Field(5, description="返回数量")
+    fusion_method: str = Field("rrf", description="融合方法: rrf或linear")
+    vector_weight: float = Field(0.4, description="向量检索权重 (仅linear方法使用)")
+    metadata_weight: float = Field(0.6, description="元数据过滤权重 (仅linear方法使用)")
+    rrf_k: int = Field(60, description="RRF平滑常数 (仅rrf方法使用)")

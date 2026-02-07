@@ -13,6 +13,22 @@
               <el-icon><List /></el-icon>
               剧情单元
             </router-link>
+            <router-link to="/story-planner" class="nav-link">
+              <el-icon><Guide /></el-icon>
+              剧情规划
+            </router-link>
+            <router-link to="/story-plans" class="nav-link">
+              <el-icon><FolderOpened /></el-icon>
+              规划历史
+            </router-link>
+            <router-link to="/novels" class="nav-link">
+              <el-icon><Reading /></el-icon>
+              小说管理
+            </router-link>
+            <router-link to="/characters" class="nav-link">
+              <el-icon><User /></el-icon>
+              人物管理
+            </router-link>
           </nav>
         </div>
       </el-header>

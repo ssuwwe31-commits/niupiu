@@ -32,7 +32,9 @@ async def get_db():
 async def init_db():
     from app.models.story_unit import Base
     from app.models.character import Base as CharBase
+    from app.models.story_plan import StoryPlan
 
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
         await conn.run_sync(CharBase.metadata.create_all)
+        await conn.run_sync(StoryPlan.metadata.create_all)
